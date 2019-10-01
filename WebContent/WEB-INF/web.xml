@@ -1,12 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>ServletJspProgramming</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	
+	<!-- ContextLoaderListener 설정 -->
+	<listener>
+		<listener-class>com.mycompany.web.contextlistener.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	
+	<!-- CharacterEncodingFilter 설정 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>com.mycompany.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>		
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern> 
+	</filter-mapping>
+
+	
+	<!-- DispatcherServlet1 설정 -->
+	<servlet>
+		<servlet-name>dispatcher1</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet1</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher1</servlet-name>
+		<url-pattern>/dispatcher1</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DispatcherServlet2 설정 -->
+	<servlet>
+		<servlet-name>dispatcher2</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet2</servlet-class>
+
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/servletContext.xml</param-value>
+		</init-param>
+		
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher2</servlet-name>
+		<url-pattern>/dispatcher2</url-pattern>
+	</servlet-mapping>
+	
+		<!-- DispatcherServlet3 설정 -->
+	<servlet>
+		<servlet-name>dispatcher3</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet3</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher3</servlet-name>
+		<url-pattern>/dispatcher3</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DispatcherServlet4 설정 -->
+	<servlet>
+		<servlet-name>dispatcher4</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet4</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher4</servlet-name>
+		<url-pattern>/dispatcher4</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DispatcherServlet5 설정 -->
+	<servlet>
+		<servlet-name>dispatcher5</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet5</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher5</servlet-name>
+		<url-pattern>/dispatcher5</url-pattern>
+	</servlet-mapping>
+	
+	<!-- DispatcherServlet6 설정 -->
+	<servlet>
+		<servlet-name>dispatcher6</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet6</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher6</servlet-name>
+		<url-pattern>/dispatcher6</url-pattern>
+	</servlet-mapping>
+	
+		<!-- DispatcherServlet7 설정 -->
+	<servlet>
+		<servlet-name>dispatcher7</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet7</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher7</servlet-name>
+		<url-pattern>/dispatcher7</url-pattern>
+	</servlet-mapping>
+	
+		<!-- DispatcherServlet8 설정 -->
+	<servlet>
+		<servlet-name>dispatcher8</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet8</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatcher8</servlet-name>
+		<url-pattern>/dispatcher8</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
